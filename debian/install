@@ -1,0 +1,6 @@
+checkaptgpg usr/bin
+checkaptgpg.conf etc
+checkaptgpg.desktop usr/share/applications
+checkaptgpg-root.desktop usr/share/applications
+checkaptgpg.png usr/share/pixmaps
+

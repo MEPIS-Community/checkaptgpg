@@ -1,0 +1,35 @@
+checkaptgpg (0.1mcr110+1) mepis; urgency=low
+
+  * Revise versioning to fit a native package.
+  * Use tiny debhelper rules file, drop cdbs build-depend.
+  * Edit long description to lines less than 80 characters wide. 
+
+ -- Steve Pusser <maintainer@mepiscommunity.org>  Mon, 11 Apr 2011 20:35:40 -0700
+
+checkaptgpg (0.1-2mlrepo2) mepis; urgency=low
+
+  * Repackage for MEPIS 8.5 community repo
+  * debian/control:
+     - bump standards to 3.8.0, no changes necessary
+     - remove ${shlibs:Depends}, ${misc:Depends} as Depends for checkaptgpg,
+       not necessary for a script
+  * Rebuild as mlrepo native package
+  * Add png icon
+
+ -- Steve Pusser <maintainer@mepiscommunity.org>  Mon, 08 Nov 2010 20:13:43 -0800
+
+checkaptgpg (0.1-2mlrepo1) mepis; urgency=low
+
+  * Modified script so it can be run as regular user, it will ask for root password 
+  * while running the script if keys need to be added
+  * deleted menu entry for starting as root
+ -- kent <kent@mepis1>  Sun, 11 Apr 2010 07:32:59 -0400
+
+checkaptgpg (0.1-1mlrepo1) mepis; urgency=low
+
+  * Added cronjob and --cronjob switch
+  * Added --wait-at-end switch
+  * Modify debian/menu to fix the command for running as root.
+  * Initial Release.
+
+ -- James Carr <maintainer@mepiscommunity.org>  Tue, 04 Aug 2009 22:20:18 +0100

@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Check Apt GPG (as Root)
+Comment=Check for any missing GPG keys needed by apt
+Exec=su-to-root -c 'checkaptgpg --wait-at-end'
+Icon=checkaptgpg
+Terminal=true
+Type=Application
+Categories=PackageManager;System;

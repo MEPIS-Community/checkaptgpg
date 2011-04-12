@@ -1,0 +1,145 @@
+#!/bin/sh
+
+# Check for and parse configuration file
+CONFFILE=/etc/checkaptgpg.conf
+[ -f $CONFFILE ] && . $CONFFILE
+
+# Check for command line options
+WAITATEND=0
+
+while [ $# -gt 0 ]; do
+    case $1 in
+        --cronjob)
+            # Run from cronjob
+            # Check for CRONJOB_ENABLED which will have been in CONFFILE above.
+            if [ "x$CRONJOB_ENABLED" != "xyes" ]; then
+                # CRONJOB not enabled, so quit without error.
+                exit 0;
+            fi
+            ;;
+        --wait-at-end)
+            # Run from menu system, make sure user can see output.
+            WAITATEND=1
+            ;;
+        *)
+            # Unknown option - don't print any error message.
+            ;;
+    esac
+    shift
+done
+
+# Check if I am root for use later.
+if [ $(id -u) -ne 0 ]; then
+    ROOT=0
+else
+    ROOT=1
+fi
+
+# Check if we are running BASH for colourisation
+if [ $BASH ]; then
+    RED='\e[1;31m'
+    BLUE='\e[1;34m'
+    GREEN='\e[0;32m'
+    END='\e[0m'
+else
+    RED=''
+    BLUE=''
+    GREEN=''
+    END=''
+fi
+
+# Will we need to be rerun as root?
+RERUN=0
+
+# The location of the trusted keyring.
+APT_TRUSTED=/etc/apt/trusted.gpg
+
+# The location of the Release files.
+APT_LISTS=/var/lib/apt/lists
+
+# Get a list of repositories for which we have downloaded a Release file
+REPOSITORIES=`ls $APT_LISTS | grep Release$`
+
+# For each repository look for a matching Release.gpg signature
+for repo in $REPOSITORIES
+do
+    echo Checking $repo
+    RELEASE=$APT_LISTS/$repo
+    GPG=''
+    if [ -s $RELEASE.gpg ]
+    then
+        GPG=$RELEASE.gpg
+    else
+        if [ -s $APT_LISTS/partial/$repo.gpg ]
+        then
+            GPG=$APT_LISTS/partial/$repo.gpg
+        else
+            if [ -s $APT_LISTS/partial/$repo.gpg.reverify ]
+            then
+                GPG=$APT_LISTS/partial/$repo.gpg.reverify
+            fi
+        fi
+    fi
+    if [ $GPG ]
+    then
+        # We have found a Release.gpg signature
+        ANSWER=`gpgv --ignore-time-conflict --keyring $APT_TRUSTED $GPG $RELEASE 2>&1`
+        if [ $? -ne 0 ]
+        then
+            # GPG errored -
+            # Assume that an ID was included in the error message in the form
+            # ... ID <GPGID> ...
+            IDFOUND=0
+            for xx in $ANSWER
+            do
+                if [ $IDFOUND -eq 0 ]
+                then
+                    if [ "ID" = "$xx" ]
+                    then
+                        IDFOUND=1
+                    fi
+                else
+                    GPGKEY=$xx
+                    break
+                fi
+            done
+            if [ $ROOT -eq 1 ]; then
+                # We are root, so we can try to download the key.
+                if [ !$KEYSERVER ]; then
+                    # Should have been specified in CONFFILE above.
+                    KEYSERVER=hkp://wwwkeys.eu.pgp.net
+                fi
+                apt-key adv --keyserver $KEYSERVER --recv-key $GPGKEY
+                # Assume it worked.
+            else
+                # We are not root, so output a message.
+                printf "    $RED%s$END\n" "Missing GPG ID $GPGKEY."
+                RERUN=1
+            fi
+        else
+            printf "    $GREEN%s$END\n" "Good GPG signature found."
+        fi
+    else
+        printf "    $BLUE%s$END\n" "No GPG Release signature found."
+    fi
+done
+
+#if [ $RERUN -gt 0 ]; then
+#    echo
+#    echo "Rerun as root to download the missing keys."
+#fi
+if [ $RERUN -gt 0 ]; then
+    echo
+    FixMissingKeysQuery="Y"
+    echo "Missing or broken keys detected."
+    echo -n "Attempt to fix missing/broken keys [Y/n]?  " && read -e FixMissingKeysQuery
+     if [ "$FixMissingKeysQuery" != "n" ]; then
+       su -c 'checkaptgpg'
+    fi
+fi
+
+if [ $WAITATEND -gt 0 ]; then
+    echo
+    echo 'Waiting for 10 seconds'
+    sleep 10
+fi

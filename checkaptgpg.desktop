@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Check Apt GPG
+Comment=Check for any missing GPG keys needed by apt
+Exec=checkaptgpg --wait-at-end
+Terminal=true
+Icon=checkaptgpg
+Type=Application
+Categories=PackageManager;System;
