@@ -107,7 +107,8 @@ do
                 # We are root, so we can try to download the key.
                 if [ !$KEYSERVER ]; then
                     # Should have been specified in CONFFILE above.
-                    KEYSERVER=hkp://wwwkeys.eu.pgp.net
+                    #KEYSERVER=hkp://wwwkeys.eu.pgp.net
+                    KEYSERVER=keys.gnupg.net
                 fi
                 apt-key adv --keyserver $KEYSERVER --recv-key $GPGKEY
                 # Assume it worked.
@@ -132,7 +133,7 @@ if [ $RERUN -gt 0 ]; then
     echo
     FixMissingKeysQuery="Y"
     echo "Missing or broken keys detected."
-    echo -n "Attempt to fix missing/broken keys [Y/n]?  " && read -e FixMissingKeysQuery
+    read -p "Attempt to fix missing/broken keys [Y/n]?  " FixMissingKeysQuery
      if [ "$FixMissingKeysQuery" != "n" ]; then
        su -c 'checkaptgpg'
     fi

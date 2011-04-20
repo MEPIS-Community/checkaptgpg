@@ -1,6 +1,0 @@
-?package(checkaptgpg):needs="text"\
-  section="Applications/System/Package Management"\
-  title="Check Apt GPG"\
-  command="checkaptgpg --wait-at-end"\
-  hints="System"
-

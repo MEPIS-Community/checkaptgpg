@@ -1,3 +1,17 @@
+checkaptgpg (0.1mcr110+2) mepis; urgency=low
+
+  * checkaptgpg script:
+  *  line 110 disabled KEYSERVER=hkp://wwwkeys.eu.pgp.net
+  *  line 111 added KEYSERVER=keys.gnupg.net
+  *  line 135, removed 'read -e'command  which causes error in M11
+      and combined prompt and read into single command using 'read -p'
+  * checkaptgpg-root.desktop deleted - not needed, single menu entry works fine 
+  * debian/install added leading slash '/' to install paths
+  * debian/manpage.1.ex deleted
+  * debian/menu deleted - not needed, checkaptgpg.desktop provides a menu entry
+
+ -- kent <kent@mepis1>  Tue, 12 Apr 2011 10:49:28 -0400
+
 checkaptgpg (0.1mcr110+1) mepis; urgency=low
 
   * Revise versioning to fit a native package.
