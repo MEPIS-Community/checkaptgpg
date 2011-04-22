@@ -14,7 +14,3 @@ Manpage (and lack thereof)
 Debian directory not clean
   The debian directory has not been cleared of detritus yet.
 
-URLs are wrong
-  The URLs listed in the debian information currently point to 
-  mepislovers.org. This is wrong and they should be modified to a 
-  permanent address.

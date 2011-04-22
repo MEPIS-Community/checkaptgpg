@@ -6,7 +6,7 @@ Bugs: mailto: <maintainer@mepiscommunity.org>
 XSBC-Original-Maintainer: James Carr <maintainer@mepiscommunity.org>
 Build-Depends: debhelper (>= 7.0.50~)
 Standards-Version: 3.9.1
-Homepage: http://mepislovers.org/
+Homepage: http://mepiscommunity.org/
 
 Package: checkaptgpg
 Architecture: all
