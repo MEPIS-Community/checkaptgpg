@@ -58,13 +58,27 @@ APT_TRUSTED=/etc/apt/trusted.gpg
 APT_LISTS=/var/lib/apt/lists
 
 # Get a list of repositories for which we have downloaded a Release file
-REPOSITORIES=`ls $APT_LISTS | grep Release$`
+# include Release files from both /var/lib/apt/lists and /var/lib/apt/lists/partial 
+REPOSITORIES="$(ls $APT_LISTS | grep Release$) $(ls $APT_LISTS/partial | grep Release$)"
+
+# Enable the line below to prevent a "No GPG Release signature found." message from being shown for
+# 'mepiscr' -- the Mepis Community repos
+REPOSITORIES="$(echo $REPOSITORIES | sed 's/ /\n/g' | grep -v mepiscr)"
 
 # For each repository look for a matching Release.gpg signature
 for repo in $REPOSITORIES
 do
     echo Checking $repo
-    RELEASE=$APT_LISTS/$repo
+    RELEASE=''
+    if [ -s $APT_LISTS/$repo ]
+    then
+     RELEASE=$APT_LISTS/$repo
+    else
+     if [ -s $APT_LISTS/partial/$repo ]
+     then
+      RELEASE=$APT_LISTS/partial/$repo
+     fi
+    fi
     GPG=''
     if [ -s $RELEASE.gpg ]
     then
@@ -80,7 +94,7 @@ do
             fi
         fi
     fi
-    if [ $GPG ]
+    if [ "$GPG" -o "`ls $RELEASE | grep InRelease`" ]
     then
         # We have found a Release.gpg signature
         ANSWER=`gpgv --ignore-time-conflict --keyring $APT_TRUSTED $GPG $RELEASE 2>&1`
@@ -104,14 +118,39 @@ do
                 fi
             done
             if [ $ROOT -eq 1 ]; then
+
+                # original code disabled
+                #  
                 # We are root, so we can try to download the key.
-                if [ !$KEYSERVER ]; then
-                    # Should have been specified in CONFFILE above.
-                    #KEYSERVER=hkp://wwwkeys.eu.pgp.net
-                    KEYSERVER=keys.gnupg.net
-                fi
-                apt-key adv --keyserver $KEYSERVER --recv-key $GPGKEY
-                # Assume it worked.
+                #if [ !$KEYSERVER ]; then
+                #    # Should have been specified in CONFFILE above.
+                #    #KEYSERVER=hkp://wwwkeys.eu.pgp.net
+                #    KEYSERVER=keys.gnupg.net
+                #fi
+                #apt-key adv --keyserver $KEYSERVER --recv-key $GPGKEY
+                ## Assume it worked.
+
+                # There's a KEYSERVER entry in the CONFFILE but 
+                # will ignore it and use the list below instead
+  
+                KEYSERVER_LIST="\
+                hkp://keyservers.org
+                hkp://keys.gnupg.net
+                pool.sks-keyservers.net
+                eu.pool.sks-keyservers.net
+                hkp://keyserver.linux.it
+                "
+                # try to download a key from keyserver(s) until
+                # successfull or end of list has been reached
+  
+                for KEYSERVER in $KEYSERVER_LIST
+                do 
+                apt-key adv --keyserver $KEYSERVER --recv-key $GPGKEY  
+                  if [ $? -eq 0 ]; then
+                     break      
+                  fi
+                done
+
             else
                 # We are not root, so output a message.
                 printf "    $RED%s$END\n" "Missing GPG ID $GPGKEY."

@@ -1,3 +1,19 @@
+checkaptgpg (0.1mcr110+3) mepis; urgency=low
+  * checkaptgpg script:
+     -lines 61-62, 72-81, 97 changes to also use Release files from /var/lib/apt/lists/partial
+       folder. This picks up some keys that were being missed.
+     -lines 63-65 added code to not test 'mepiscr' repos.
+       This prevents a "No GPG Release signature found." message for those repos
+     -lines 124-131 disabled original code that downloaded and installed a key from KEYSERVER
+       specified either in CONFFILE (/etc/checkaptgpg.conf) or from within the script
+     -lines 133-153 attempt to download and install a key from KEYSERVER using a list of
+       keyservers. Stops on first successfull attempt or until all keyservers have been tried.
+   * debian/dirs 
+      -added leading slash '/' for etc and usr/bin
+      -added /usr, /usr/share, /usr/share/applications, /usr/share/pixmaps    
+
+ -- kent <kent@mepis1>  Fri, 22 Apr 2011 13:05:14 -0400
+
 checkaptgpg (0.1mcr110+2) mepis; urgency=low
 
   * checkaptgpg script:
