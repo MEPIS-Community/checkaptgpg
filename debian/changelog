@@ -1,3 +1,10 @@
+checkaptgpg (0.1mcr110+4) mepis; urgency=low
+
+  * Remove debian/dirs file
+  * Add Comment:  line to .desktop file
+
+ -- Steve Pusser <maintainer@mepiscommunity.org>  Fri, 22 Apr 2011 13:07:34 -0700
+
 checkaptgpg (0.1mcr110+3) mepis; urgency=low
   * checkaptgpg script:
      -lines 61-62, 72-81, 97 changes to also use Release files from /var/lib/apt/lists/partial
