@@ -2,6 +2,11 @@
 Name=Check Apt GPG
 Comment=
 GenericName[en_US]=Check for and install missing apt GPG keys
+GenericName[fr]=Vérifier les clés GPG pour APT/ Synaptic
+GenericName[de]=Kontrollieren die GPG-Schlüssel für APT/ Synaptic
+GenericName[es]=Comprobar las llaves GPG para APT/ Synaptic
+GenericName[nl]=Controleer de GPG sleutels voor APT/Synaptic
+GenericName[it]=Controllare le chiavi GPG per APT/Synaptic
 GenericName=Check for and install missing apt GPG keys
 Exec=checkaptgpg --wait-at-end
 Terminal=true
