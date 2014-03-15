@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Check Apt GPG
+Name=MX Check Apt GPG
 Comment=
 GenericName[en_US]=Check for and install missing apt GPG keys
 GenericName[fr]=Vérifier les clés GPG pour APT/ Synaptic
@@ -14,4 +14,4 @@ Terminal=true
 Icon=checkaptgpg
 Type=Application
 Categories=PackageManager;System;
-OnlyShowIn=KDE;
+NotShowIn=KDE;
