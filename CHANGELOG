@@ -1,3 +1,8 @@
+2013 May 25
+ - Adjusted keyserver list to minimize timeouts from a formerly fast server.
+ - Removed the segment which filtered out of the unsigned
+   MEPIS Community Repositories as the ones for MEPIS 12 are signed.
+
 2009 Aug 4
  - Added a configuration file - /etc/checkaptgpg.conf
    - CRONJOB_ENABLED - If this is not set to yes, then the default 

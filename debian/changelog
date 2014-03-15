@@ -1,3 +1,15 @@
+checkaptgpg (0.2mcr120+1) mepis; urgency=low
+
+  * New upstream release adding support for MEPIS 12 CR
+
+ -- Timothy E. Harris <maintainer@mepiscommunity.org>  Sun, 26 May 2013 10:51:59 -0400
+
+checkaptgpg (0.1mcr110+5) mepis; urgency=low
+
+  * Add GenericName= and attendant translations to desktop file.
+
+ -- Steve Pusser <maintainer@mepiscommunity.org>  Thu, 28 Apr 2011 19:39:52 -0700
+
 checkaptgpg (0.1mcr110+4) mepis; urgency=low
 
   * Remove debian/dirs file

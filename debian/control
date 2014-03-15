@@ -1,7 +1,7 @@
 Source: checkaptgpg
 Section: admin
 Priority: optional
-Maintainer: Steve Pusser <maintainer@mepiscommunity.org>
+Maintainer: Timothy E. Harris <maintainer@mepiscommunity.org>
 Bugs: mailto: <maintainer@mepiscommunity.org>
 XSBC-Original-Maintainer: James Carr <maintainer@mepiscommunity.org>
 Build-Depends: debhelper (>= 7.0.50~)
@@ -16,5 +16,5 @@ Description: check and add missing GPG keys needed by apt
  (and siblings) and will check that any needed GPG keys are available. It will
  print a GPG status for each repository found. If one or more GPG keys are
  found to be missing it will request root password and run again as root
- and attempting to download the missings GPG key(s) from
- hkp://wwwkeys.eu.pgp.net.
+ and attempting to download the missings GPG key(s) from several 
+ large keyservers
