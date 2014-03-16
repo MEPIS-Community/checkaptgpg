@@ -260,10 +260,6 @@ do
 done
 echo
 
-#if [ $RERUN -gt 0 ]; then
-#    echo
-#    echo "Rerun as root to download the missing keys."
-#fi
 if [ $RERUN -gt 0 ]; then
     echo
     FixMissingKeysQuery="Y"
@@ -276,8 +272,26 @@ fi
 
 if [ $WAITATEND -gt 0 ]; then
     echo
-#    echo 'Waiting for 10 seconds'
-    read -sn 1 -p "Press any key to close this window." -t 999999999
+    HelpOrQuit=""
+    read -sn 1 -t 999999999 -p "Press 'H' for online help, press any other key to close this window." HelpOrQuit
     sleep .1
+    if [ "$HelpOrQuit" = "h" ] || [ "$HelpOrQuit" = "H" ]
+      then
+        echo
+        echo
+        echo "Please wait while the link 'http://www.mepiscommunity.org/doc_mx/mxapps.html#check' opens in your browser ..."
+        echo
+        if [ "$(whoami)" = "root" ]
+          then    
+            User=$(who | grep '(:0)' -m1 | awk '{print $1}')  
+            1>&2 2>/dev/null su - $User -c 'env XAUTHORITY=/$HOME/.Xauthority DISPLAY=:0 1>&2 2>/dev/null xdg-open http://www.mepiscommunity.org/doc_mx/mxapps.html#check&'
+          else 
+            1>&2 2>/dev/null xdg-open http://www.mepiscommunity.org/doc_mx/mxapps.html#check&
+        fi   
+        sleep 2
+        read -sn 1 -p "Press any key to close this window." -t 999999999
+        sleep .1
+      else
+        :
+    fi
 fi
-         
