@@ -1,3 +1,28 @@
+checkaptgpg (0.2.2mcr120+2) mepis; urgency=low
+
+  * Add some alternate browser depends.
+
+ -- Steven Pusser (Stevo) <maintainer@mepiscommunity.org>  Sun, 16 Mar 2014 16:12:26 -0700
+
+checkaptgpg (0.2.2mcr120+1) mepis; urgency=low
+
+  * Online help added, add a www browser to Depends.
+
+ -- Steven Pusser (Stevo) <maintainer@mepiscommunity.org>  Sun, 16 Mar 2014 10:14:07 -0700
+
+checkaptgpg (0.2.1mcr110+1) mepis; urgency=low
+
+  * Rebuild for MEPIS 11 community repository.
+
+ -- Steven Pusser (Stevo) <maintainer@mepiscommunity.org>  Sat, 15 Mar 2014 19:30:11 -0700
+
+checkaptgpg (0.2.1mcr120+1) mepis; urgency=low
+
+  * Adds MX-branded desktop file to only appear in non-KDE menus, and the original
+    will only appear on KDE menus.
+
+ -- Steven Pusser (Stevo) <maintainer@mepiscommunity.org>  Sat, 15 Mar 2014 19:26:38 -0700
+
 checkaptgpg (0.2mcr120+1) mepis; urgency=low
 
   * New upstream release adding support for MEPIS 12 CR
