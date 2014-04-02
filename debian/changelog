@@ -1,3 +1,9 @@
+checkaptgpg (0.2.2mcr120+3) mepis; urgency=low
+
+  * Add name and comments to MX desktop file.
+
+ -- Steven Pusser (Stevo) <maintainer@mepiscommunity.org>  Sun, 23 Mar 2014 11:03:47 -0700
+
 checkaptgpg (0.2.2mcr120+2) mepis; urgency=low
 
   * Add some alternate browser depends.
