@@ -284,9 +284,9 @@ if [ $WAITATEND -gt 0 ]; then
         if [ "$(whoami)" = "root" ]
           then    
             User=$(who | grep '(:0)' -m1 | awk '{print $1}')  
-            1>&2 2>/dev/null su - $User -c 'env XAUTHORITY=/$HOME/.Xauthority DISPLAY=:0 1>&2 2>/dev/null xdg-open http://www.mepiscommunity.org/doc_mx/mxapps.html#check&'
+            1>&2 2>/dev/null su - $User -c 'env XAUTHORITY=/$HOME/.Xauthority DISPLAY=:0 1>&2 2>/dev/null xdg-open http://www.mepiscommunity.org/user_manual_mx15/mxum.html#check&'
           else 
-            1>&2 2>/dev/null xdg-open http://www.mepiscommunity.org/doc_mx/mxapps.html#check&
+            1>&2 2>/dev/null xdg-open http://www.mepiscommunity.org/user_manual_mx15/mxum.html#check&
         fi   
         sleep 2
         read -sn 1 -p "Press any key to close this window." -t 999999999
