@@ -279,7 +279,7 @@ if [ $WAITATEND -gt 0 ]; then
       then
         echo
         echo
-        echo "Please wait while the link 'http://www.mepiscommunity.org/doc_mx/mxapps.html#check' opens in your browser ..."
+        echo "Please wait while the link 'http://www.mepiscommunity.org/user_manual_mx15/mxum.html#check' opens in your browser ..."
         echo
         if [ "$(whoami)" = "root" ]
           then    
