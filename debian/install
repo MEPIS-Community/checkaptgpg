@@ -1,5 +1,5 @@
 checkaptgpg usr/bin
-checkaptgpg.conf etc
+#checkaptgpg.conf etc
 checkaptgpg.desktop usr/share/applications
 mx-checkaptgpg.desktop usr/share/applications
 checkaptgpg.png usr/share/pixmaps
