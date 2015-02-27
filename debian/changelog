@@ -1,3 +1,10 @@
+checkaptgpg (0.2.2mcr120+4) mepis; urgency=low
+
+  * Online help link updated
+  * no longer install /etc/checkaptgpg.conf
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Tue, 24 Feb 2015 20:23:41 -0500
+
 checkaptgpg (0.2.2mcr120+3) mepis; urgency=low
 
   * Add name and comments to MX desktop file.
