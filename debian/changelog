@@ -1,3 +1,9 @@
+checkaptgpg (0.2.2mcr120+5) mepis; urgency=low
+
+  * Update online help link
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Fri, 20 Mar 2015 19:27:05 -0400
+
 checkaptgpg (0.2.2mcr120+4) mepis; urgency=low
 
   * Online help link updated
