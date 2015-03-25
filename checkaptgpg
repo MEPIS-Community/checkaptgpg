@@ -281,8 +281,8 @@ if [ $WAITATEND -gt 0 ]; then
         echo
         echo "Please wait while the link 'http://mepiscommunity.org/doc_mx/checkgpg.html' opens ..."
         echo
-        if [ "$(whoami)" = "root" ]
         if [ -e /usr/bin/mx-viewer ]; then helpViewer="mx-viewer"; else helpViewer="xdg-open"; fi
+        if [ "$(whoami)" = "root" ]
           then    
             User=$(who | grep '(:0)' -m1 | awk '{print $1}')  
             1>&2 2>/dev/null su - $User -c 'env XAUTHORITY=/$HOME/.Xauthority DISPLAY=:0 1>&2 2>/dev/null '$helpViewer' http://mepiscommunity.org/doc_mx/checkgpg.html&'
