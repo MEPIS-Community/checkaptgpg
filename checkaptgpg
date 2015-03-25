@@ -279,14 +279,15 @@ if [ $WAITATEND -gt 0 ]; then
       then
         echo
         echo
-        echo "Please wait while the link 'http://mepiscommunity.org/doc_mx/checkgpg.html' opens in your browser ..."
+        echo "Please wait while the link 'http://mepiscommunity.org/doc_mx/checkgpg.html' opens ..."
         echo
         if [ "$(whoami)" = "root" ]
+        if [ -e /usr/bin/mx-viewer ]; then helpViewer="mx-viewer"; else helpViewer="xdg-open"; fi
           then    
             User=$(who | grep '(:0)' -m1 | awk '{print $1}')  
-            1>&2 2>/dev/null su - $User -c 'env XAUTHORITY=/$HOME/.Xauthority DISPLAY=:0 1>&2 2>/dev/null xdg-open http://mepiscommunity.org/doc_mx/checkgpg.html&'
+            1>&2 2>/dev/null su - $User -c 'env XAUTHORITY=/$HOME/.Xauthority DISPLAY=:0 1>&2 2>/dev/null '$helpViewer' http://mepiscommunity.org/doc_mx/checkgpg.html&'
           else 
-            1>&2 2>/dev/null xdg-open http://mepiscommunity.org/doc_mx/checkgpg.html&
+            1>&2 2>/dev/null $helpViewer http://mepiscommunity.org/doc_mx/checkgpg.html&
         fi   
         sleep 2
         read -sn 1 -p "Press any key to close this window." -t 999999999
