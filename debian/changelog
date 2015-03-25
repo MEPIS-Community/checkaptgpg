@@ -1,3 +1,9 @@
+checkaptgpg (0.2.2mcr120+6) mepis; urgency=low
+
+  * Display help in mx-viewer if it's installed
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Wed, 25 Mar 2015 09:30:43 -0400
+
 checkaptgpg (0.2.2mcr120+5) mepis; urgency=low
 
   * Update online help link
