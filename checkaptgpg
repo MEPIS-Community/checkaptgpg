@@ -80,6 +80,7 @@ APT_LISTS=/var/lib/apt/lists
 # Get a list of repositories for which we have downloaded a Release file.
 # Include Release and InRelease files from both /var/lib/apt/lists and /var/lib/apt/lists/partial.
 REPOSITORIES="$(find $APT_LISTS -regex .*Release$ | cut -c20- | cut -f2- -d/)"
+
 # There's no GPG signature for the mepis7cr|mepis8cr|mepis85cr|mepis11cr CR repos, so
 # exclude them to prevent a "No GPG Release signature found." message from being shown.
 REPOSITORIES="$(sed 's/ /\n/g' <<<$REPOSITORIES | grep -v -emepis{7,8,85,11}cr)"
