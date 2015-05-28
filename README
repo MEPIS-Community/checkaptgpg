@@ -1,4 +1,4 @@
-checkaptget is a script that checks the missing GPG keys for the APT repositiories and downloads the missing keys from the public key servers. 
+checkaptgpg is a script that checks the missing GPG keys for the APT repositiories and downloads the missing keys from the public key servers. 
 
 The package was debianized by James Carr and is upgraded by MEPIS Community users.
 
