@@ -1,3 +1,9 @@
+checkaptgpg (0.2.2mcr120+7) mepis; urgency=low
+
+  * Added Polish translations
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Mon, 20 Apr 2015 23:02:17 -0400
+
 checkaptgpg (0.2.2mcr120+6) mepis; urgency=low
 
   * Display help in mx-viewer if it's installed
