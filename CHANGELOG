@@ -1,3 +1,7 @@
+2015 May 27
+ - Don't intend to keep updating this CHANGELOG, see debian/changelog for
+   changes.
+
 2013 May 25
  - Adjusted keyserver list to minimize timeouts from a formerly fast server.
  - Removed the segment which filtered out of the unsigned
