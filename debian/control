@@ -10,7 +10,7 @@ Homepage: http://mepiscommunity.org/
 
 Package: checkaptgpg
 Architecture: all
-Depends: gnupg, apt, policykit-1, 
+Depends: gnupg, apt, menu, 
  x-www-browser | www-browser | gnome-www-browser | firefox | qupzilla | google-chrome | opera
 Description: check and add missing GPG keys needed by apt
  Check Apt GPG will scan the already downloaded Release files cached by apt
