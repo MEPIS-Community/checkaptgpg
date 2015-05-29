@@ -9,10 +9,11 @@ checkaptgpg (0.3) mx; urgency=medium
   * Test added to only allow running script as root.
   * Don't check gpg signatures of Mepis 7, 8, 8.5, 11 CR repos. 
   * New way of assigning GPGKEY, old way didn't work for most non-English locales
-  * Changed .desktop files to launch script with su-to-root instead of pkexec.
+  * mx-checkaptgpg.desktop, launch script with su-to-root instead of pkexec.
+  * checkaptgpg.desktop (KDE), launch script with su -c instead of pkexec.
   * Removed policykit-1 dependency, added menu dependency.   
  
- -- Kent Mathern <maintainer@mepiscommunity.org>  Thu, 28 May 2015 09:21:41 -0400
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Thu, 28 May 2015 21:42:32 -0400
 
 checkaptgpg (0.2.2mcr120+7) mepis; urgency=low
 
