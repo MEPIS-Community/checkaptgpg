@@ -14,7 +14,7 @@ Depends: gnupg, apt, menu,
  x-www-browser | www-browser | gnome-www-browser | firefox | qupzilla | google-chrome | opera
 Description: check and add missing GPG keys needed by apt
  Check Apt GPG will scan the already downloaded Release files cached by apt
- (and siblings) and will check that any needed GPG keys are available. It will
- print a GPG status for each repository found. If one or more GPG keys are
- found to be missing, it will request root password and run again as root,
- attempting to download the missing GPG key(s) from several large keyservers.
+ (and siblings) and will check that any needed GPG keys are available. Will
+ print a GPG status for each repository found. If GPG keys are found to be
+ missing, it will attempt to download the missing GPG key(s) from one of
+ several large keyservers.
