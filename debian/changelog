@@ -13,7 +13,7 @@ checkaptgpg (0.3) mx; urgency=medium
   * checkaptgpg.desktop (KDE), launch script with su -c instead of pkexec.
   * Removed policykit-1 dependency, added menu dependency.   
  
- -- Kent Mathern <maintainer@mepiscommunity.org>  Thu, 28 May 2015 21:57:56 -0400
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Fri, 29 May 2015 09:17:53 -0400
 
 checkaptgpg (0.2.2mcr120+7) mepis; urgency=low
 

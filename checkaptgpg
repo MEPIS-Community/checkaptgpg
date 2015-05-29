@@ -102,7 +102,7 @@ do
       ANSWER=$(gpgv --ignore-time-conflict $(find /etc/apt/trusted.gpg* -regex .*gpg$ | sed 's/^/ --keyring /') $GPG $RELEASE 2>&1)
       if [ $? -ne 0 ]
         then
-          GPGKEY=$(grep -Eo \ [0-9,A-F]{8} <<<$ANSWER)
+          GPGKEY=$(grep -Eo \ [0-9A-F]{8} <<<$ANSWER)
           KEYSERVER_LIST="\
           keyserver.ubuntu.com
           hkp://pgp.mit.edu
