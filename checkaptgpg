@@ -37,8 +37,8 @@ case $1 in
             "    su -c 'apt-get install pkg-kde-archive-keyring'"                                                      \\n ;;
 
   *download.virtualbox.org_virtualbox*)
-    echo -e "*** wget download the oracle_vbox.asc file:"                                                              \\n\\n\
-            "    su -c 'wget -q -O- http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc | apt-key add -'" \\n ;;
+    echo -e "*** wget download the oracle_vbox_2016.asc file:"                                                              \\n\\n\
+            "    su -c 'wget -q -O- http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc | apt-key add -'" \\n ;;
   *) ;;
 esac
 }
