@@ -1,3 +1,21 @@
+checkaptgpg (0.3.1mcr110+2) mepis; urgency=medium
+
+  * Repackaged for Mepis 11.
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Fri, 29 Apr 2016 12:38:12 -0400
+
+checkaptgpg (0.3.1mcr120+2) mepis; urgency=medium
+
+  * Repackaged for Mepis 12 / MX-14.
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Fri, 29 Apr 2016 12:37:05 -0400
+
+checkaptgpg (0.3.1mx150+2) mx; urgency=medium
+
+  * Removed debian/cron.d
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Fri, 29 Apr 2016 12:26:04 -0400
+
 checkaptgpg (0.3.1mcr110+1) mepis; urgency=medium
 
   * Repackaged for Mepis 11.
