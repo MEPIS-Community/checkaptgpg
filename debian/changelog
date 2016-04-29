@@ -1,3 +1,21 @@
+checkaptgpg (0.3.1mcr110+1) mepis; urgency=medium
+
+  * Repackaged for Mepis 11.
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Fri, 29 Apr 2016 12:01:22 -0400
+
+checkaptgpg (0.3.1mcr120+1) mepis; urgency=medium
+
+  * Repackaged for Mepis 12 / MX-14.
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Fri, 29 Apr 2016 11:52:56 -0400
+
+checkaptgpg (0.3.1mx150+1) mx; urgency=medium
+
+  * Update oracle vbox .asc file link
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Fri, 29 Apr 2016 11:46:24 -0400
+
 checkaptgpg (0.3mcr110+2) mepis; urgency=medium
 
   * Repackaged for Mepis 11.
