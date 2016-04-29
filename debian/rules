@@ -1,7 +1,3 @@
 #!/usr/bin/make -f
 %:
 	dh $@
-
-# use lzma to compress debs, not yet approved by Debian
-# for Debian, use bzip2 or leave blank to use gzip
-
