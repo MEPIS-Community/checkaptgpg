@@ -1,3 +1,46 @@
+checkaptgpg (0.3mcr110+2) mepis; urgency=medium
+
+  * Repackaged for Mepis 11.
+
+ -- Mike Purtell <mandbx@sbcglobal.net>  Thu, 04 Jun 2015 20:16:24 -0700
+
+checkaptgpg (0.3mcr120+2) mepis; urgency=medium
+
+  * Repackaged for Mepis 12.
+
+ -- Mike Purtell <mandbx@sbcglobal.net>  Thu, 04 Jun 2015 20:14:04 -0700
+
+checkaptgpg (0.3mx150+2) mx; urgency=medium
+
+  * Repackaged for MX 15.
+  - Added new help link.
+
+ -- Mike Purtell <mandbx@sbcglobal.net>  Thu, 04 Jun 2015 19:01:29 -0700
+
+checkaptgpg (0.3-0mcr120+1) mepis; urgency=medium
+
+  * Repackaged for Mepis 12.
+
+ -- Mike Purtell <mandbx@sbcglobal.net>  Mon, 01 Jun 2015 17:22:18 -0700
+
+checkaptgpg (0.3-0mcr110+1) mepis; urgency=medium
+
+  * Repackaged for Mepis 11.
+
+ -- Mike Purtell <mandbx@sbcglobal.net>  Mon, 01 Jun 2015 17:19:43 -0700
+
+checkaptgpg (0.3-0mcr120+1) mepis; urgency=medium
+
+  * Repackaged for Mepis 12.
+
+ -- Mike Purtell <mandbx@sbcglobal.net>  Mon, 01 Jun 2015 17:18:45 -0700
+
+checkaptgpg (0.3-0mx150+1) mx; urgency=medium
+
+  * Repackaged for MX 15.
+
+ -- Mike Purtell <mandbx@sbcglobal.net>  Mon, 01 Jun 2015 17:06:18 -0700
+
 checkaptgpg (0.3) mx; urgency=medium
 
   * New upstream release. 
