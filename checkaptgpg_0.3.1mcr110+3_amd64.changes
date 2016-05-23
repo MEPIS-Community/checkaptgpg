@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Mon, 23 May 2016 07:20:33 -0400
+Source: checkaptgpg
+Binary: checkaptgpg
+Architecture: source all
+Version: 0.3.1mcr110+3
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphinoracle <dolphinoracle@gmail.com>
+Description:
+ checkaptgpg - check and add missing GPG keys needed by apt
+Changes:
+ checkaptgpg (0.3.1mcr110+3) mx; urgency=medium
+ .
+   * new desktop file (mx-15)
+Checksums-Sha1:
+ 8e64ad0cef17721ce778358468d040ee394d85b5 687 checkaptgpg_0.3.1mcr110+3.dsc
+ d5287ab136526dd986118bf571f03f2277a9e4f3 61440 checkaptgpg_0.3.1mcr110+3.tar.xz
+ a3f0266eccb426463f38935da0a1350fa6232100 9356 checkaptgpg_0.3.1mcr110+3_all.deb
+Checksums-Sha256:
+ 35dbd7514f05a36dad8b59c576574c6b6cb032d1b04ee8ab582a663fd5c03167 687 checkaptgpg_0.3.1mcr110+3.dsc
+ 476061fcf49c7c7c5c793c38def6cdb659c650b455ac6dd1c791c81bc728f185 61440 checkaptgpg_0.3.1mcr110+3.tar.xz
+ b8fdc469d04ee667c6f3313a6f0ce0e64c244cd5306c928ff3566d25f4acdb58 9356 checkaptgpg_0.3.1mcr110+3_all.deb
+Files:
+ 5c977d2badb52448a3c8cbf916fc797f 687 admin optional checkaptgpg_0.3.1mcr110+3.dsc
+ 86be58f3c16a7f35fb4bf57ef668a196 61440 admin optional checkaptgpg_0.3.1mcr110+3.tar.xz
+ 35b02b89e7989c80e067ab8e7c622bd0 9356 admin optional checkaptgpg_0.3.1mcr110+3_all.deb
+Original-Maintainer: James Carr <maintainer@mepiscommunity.org>
