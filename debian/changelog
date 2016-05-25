@@ -1,3 +1,9 @@
+checkaptgpg (0.3.1mcr110+3) mx; urgency=medium
+
+  * new desktop file (mx-15)
+
+ -- dolphinoracle <dolphinoracle@gmail.com>  Mon, 23 May 2016 07:20:33 -0400
+
 checkaptgpg (0.3.1mcr110+2) mepis; urgency=medium
 
   * Repackaged for Mepis 11.

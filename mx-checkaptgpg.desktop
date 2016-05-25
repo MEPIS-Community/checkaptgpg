@@ -23,5 +23,5 @@ Exec=su-to-root -X -c "x-terminal-emulator -e 'bash checkaptgpg --wait-at-end'"
 Terminal=false
 Icon=checkaptgpg
 Type=Application
-Categories=PackageManager;System;
+Categories=PackageManager;System;MX-Software;
 NotShowIn=KDE;
