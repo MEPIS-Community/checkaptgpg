@@ -1,3 +1,22 @@
+checkaptgpg (17.03mcr110+1) mepis; urgency=medium
+
+  * Repackaged for Mepis 11
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Tue, 21 Mar 2017 08:47:06 -0400
+
+checkaptgpg (17.03mcr120+1) mepis; urgency=medium
+
+  * Repackaged for Mepis 12 / MX-14
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Tue, 21 Mar 2017 08:43:30 -0400
+
+checkaptgpg (17.03mx15+1) mx; urgency=medium
+
+  * Help url updated
+  * Change to Adrian's version numbering
+
+ -- Kent Mathern <maintainer@mepiscommunity.org>  Tue, 21 Mar 2017 08:29:07 -0400
+
 checkaptgpg (0.3.1mx150+4) mx; urgency=medium
 
   * Repackaged for MX-15
